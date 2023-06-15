@@ -1,8 +1,10 @@
 $button-purple: #7469F3;
+$index: calc(1vw + 1vh);
+
 
 button {
   background-color: $button-purple;
-  padding: 13px 81px;
+  padding: calc($index*.4) calc($index*3);
   border: none;
   border-radius: 6px;
   color: #fff;

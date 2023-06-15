@@ -1,7 +1,23 @@
+$index: calc(1vw + 1vh);
+
+.card-items {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .card-item {
   border-radius: 6px;
   overflow: hidden;
   position: relative;
+  display: flex;
+  align-items: flex-end;
+  width: 30%;
+  height: calc($index * 12);
+  margin-bottom: calc($index * 1.5);
+  margin-left: calc($index * .75);
+  margin-right: calc($index * .75);
 
   &:hover {
     .layout {
@@ -10,6 +26,7 @@
   }
 
   .bg{
+    width: 100%;
     img {
       width: 100%;
     }
@@ -17,16 +34,20 @@
 
   .layout {
     background-color: rgba($color: #2B2F3C, $alpha: 0.65);
-    max-width: 100%;
+    width: 100%;
     height: 100%;
-    padding: 16px;
+    padding: $index;
     position: absolute;
-    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    top: 0;
     left: 0;
-    transform: translateY(85%);
+    transform: translateY(calc(100% - ($index*2.7)));
     z-index: 2;
     color: #fff;
-    transition: transform .2s ease-in-out;
+    transition: all .2s ease;
 
     &__top {
       max-width: 100%;
@@ -42,12 +63,13 @@
 
       &-rate {
         display: flex;
-        margin-left: 15px;
+        margin-left: $index;
         align-items: center;
         img {
+          height: $index;
           position: relative;
-          top: -3px;
-          margin-left: 5px;
+          top: calc($index * -0.1);
+          margin-left: calc($index * 0.4);
         }
       }
 
@@ -59,7 +81,7 @@
 
     &__body {
       font-weight: 500;
-      margin-top: 20px;
+      margin-top: $index;
     }
   }
 }

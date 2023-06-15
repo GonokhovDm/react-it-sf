@@ -1,3 +1,5 @@
+$index: calc(1vw + 1vh);
+
 body {
   margin: 0;
   padding: 0;
@@ -7,7 +9,7 @@ body {
 
 * {
   font-family: 'Roboto', sans-serif;
-  font-size: 18px;
+  font-size: calc($index * 0.65);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -17,22 +19,12 @@ header {
   justify-content: flex-end;
 }
 
-
-
-.container-fluid {
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .wrapper {
   background-color: #434343;
   margin-top: 35px;
-  padding: 25px;
+  padding: calc($index);
   border-radius: 6px;
-
-  .row {
-    margin-bottom: 50px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

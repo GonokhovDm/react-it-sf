@@ -14,9 +14,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.App {
+  position: relative;
+}
+
 header {
   display: flex;
   justify-content: flex-end;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .wrapper {
@@ -27,4 +37,17 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.section {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  background-color: rgba($color: #fff, $alpha: .4);
+  z-index: 2;
 }

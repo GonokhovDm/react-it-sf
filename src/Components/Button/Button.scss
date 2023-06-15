@@ -1,0 +1,23 @@
+$button-purple: #7469F3;
+
+button {
+  background-color: $button-purple;
+  padding: 13px 81px;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+  &:hover {
+    background-color: lighten($button-purple, 3%);
+  }
+
+  &:active {
+    background-color: darken($button-purple, 3%);
+    -webkit-box-shadow: 0px 0px 51px 4px rgba(34, 60, 80, 0.2) inset;
+    -moz-box-shadow: 0px 0px 51px 4px rgba(34, 60, 80, 0.2) inset;
+    box-shadow: 0px 0px 51px 4px rgba(34, 60, 80, 0.2) inset;
+  }
+}

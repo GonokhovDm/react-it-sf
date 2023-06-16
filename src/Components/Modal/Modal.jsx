@@ -5,10 +5,10 @@ import './ModalMedia.scss'
 
 import closeSvg from '../../source/close.svg'
 
-function Modal({ setModalIsActive }) {
+function Modal({ modalIsActive, setModalIsActive }) {
 
   return (
-    <div className="modal">
+    <div className={`modal ${modalIsActive ? 'active' : ''}`}>
       <button className='modal__close' onClick={() => setModalIsActive(false)}>
         <img src={closeSvg} alt="close" />
       </button>

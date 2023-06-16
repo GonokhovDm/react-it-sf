@@ -53,7 +53,7 @@ function App() {
       </main>
 
       <section className={`modal-wrapper ${modalIsActive ? 'active' : ''}`}>
-        <Modal setModalIsActive={setModalIsActive}/>
+        <Modal modalIsActive={modalIsActive} setModalIsActive={setModalIsActive}/>
       </section>
     </div>
   );

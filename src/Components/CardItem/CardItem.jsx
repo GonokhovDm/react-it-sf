@@ -15,14 +15,14 @@ function CardItem({ responsePhoto, responseInfo, cardsCounter }) {
   
   return (
     <div className='card-items'>
-    {responseInfo.slice(0, cardsCounter).map(item => (
+    {responseInfo.slice(0, cardsCounter).map((item, index) => (
       <div className="card-item" key={item.id}>
         <div className="bg">
           {/* ! ! ! ! ! ! ! ! */}
-          <img src={require('../../source/Group 3.png')} alt="" />
+          <img src={responsePhoto[index].url} alt="" />
         </div>
         <div className="layout">
-          <div className="layot__wrapper">
+          <div className="layout__wrapper">
             <div className="layout__top">
               <div className="layout__top-mail">{item.email}</div>
               <div className="layout__top-rate">

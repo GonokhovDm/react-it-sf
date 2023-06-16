@@ -44,11 +44,13 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba($color: #fff, $alpha: .4);
-  z-index: 2;
-  display: none;
+  background-color: rgba($color: #fff, $alpha: 0);
+  z-index: -1;
+  transition: background-color .2s ease-in-out;
+  
 
   &.active {
-    display: flex;
+    z-index: 2;
+    background-color: rgba($color: #fff, $alpha: .4);
   }
 }

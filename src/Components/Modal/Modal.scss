@@ -45,7 +45,7 @@ h1 {
     cursor: text;
   }
 
-  div {
+  .modal__checkbox {
     width: 100%;
     margin-top: 10px;
     display: flex;
@@ -60,9 +60,10 @@ h1 {
       display: flex;
       align-items: center;
       cursor: pointer;
+      margin-bottom: 20px;
     }
 
-    .modal__checkbox {
+    .modal__checkbox-custom {
       display: none;
       &:checked + label .modal__checkbox-span {
         &:after {
@@ -96,7 +97,7 @@ h1 {
     }
   }
 
-  form {
+  .form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -112,30 +113,6 @@ h1 {
 
         &:focus {
           outline: none;
-        }
-      }
-
-      &[type=submit] {
-        background-color: $purple;
-        border: none;
-        border-radius: 6px;
-        padding: calc($index*.5) calc($index*2.5);
-        margin-top: 20px;
-        font-weight: 500;
-        font-size: calc($index * .8);
-        color: #fff;
-        cursor: pointer;
-        transition: all .2s ease-in-out;
-
-        &:hover {
-          background-color: lighten($purple, 3%);
-        }
-      
-        &:active {
-          background-color: darken($purple, 3%);
-          -webkit-box-shadow: 0px 0px 51px 4px rgba(34, 60, 80, 0.2) inset;
-          -moz-box-shadow: 0px 0px 51px 4px rgba(34, 60, 80, 0.2) inset;
-          box-shadow: 0px 0px 51px 4px rgba(34, 60, 80, 0.2) inset;
         }
       }
     }

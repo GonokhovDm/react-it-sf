@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import Button from '../Button/Button';
 
 import './Modal.scss'
 import './ModalMedia.scss'
@@ -6,24 +7,31 @@ import './ModalMedia.scss'
 import usersDb from "../../source/usersDb.json";
 import closeSvg from '../../source/close.svg'
 
-function Modal({ modalIsActive, setModalIsActive, isAutorized, setIsAutorized }) {
+function Modal({ modalIsActive, setModalIsActive, setIsAutorized }) {
 
   const [loginValue, setLoginValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
-
-  const onChangeLogin = (event) => {
-    setLoginValue(event.target.value);
-  }
-
-  const onChangePassword = (event) => {
-    setPasswordValue(event.target.value);
-  }
+  const [isChecked, setIsChecked] = useState(false);
 
   const onSubmitClick = () => {
-    for (let i = 0; i = usersDb.length; i++) {
-      if ((usersDb[i].login === loginValue) && (usersDb[i] === passwordValue)) {
-        alert('verify')
+
+    for (let i = 0; i < usersDb.length; i++) {
+      if ((usersDb[i].login === loginValue) && (usersDb[i].password === passwordValue)) {
+        setModalIsActive(false);
+        setIsAutorized(true);
+        return
+      } else {
+        alert(`Wrong login or password. Try it: \n
+        1. login: testlogin password: testpassword \n
+        2. login: myloginisawesome password: mypasswordissafe \n
+        3. login: logi1111 password: logi2222 \n`);
+        return
       }
+    }
+
+    if (!isChecked) {
+      setLoginValue('');
+      setPasswordValue('');
     }
   }
 
@@ -33,21 +41,21 @@ function Modal({ modalIsActive, setModalIsActive, isAutorized, setIsAutorized })
         <img src={closeSvg} alt="close" />
       </button>
       <h1>Autorization</h1>
-      <form action="POST">
+      <div className="form">
         <label htmlFor="login" className='modal__input'>
-          <input type="text" id="login" placeholder='&nbsp;' onChange={onChangeLogin} />
+          <input type="text" id="login" value={loginValue} placeholder='&nbsp;' onChange={(e) => setLoginValue(e.target.value)} />
           <span className='modal__placeholder'>Login</span>
         </label>
         <label htmlFor="password" className='modal__input'>
-          <input type="password" id='password' placeholder='&nbsp;' onChange={onChangePassword} />
+          <input type="password" id='password' value={passwordValue} placeholder='&nbsp;' onChange={(e) => setPasswordValue(e.target.value)} />
           <span className='modal__placeholder'>Password</span>
         </label>
-        <div>
-          <input type="checkbox" className='modal__checkbox' id='remember'/>
+        <div className='modal__checkbox'>
+          <input type="checkbox" className='modal__checkbox-custom' id='remember' onChange={() => setIsChecked(!isChecked)}/>
           <label htmlFor="remember"><span className='modal__checkbox-span'></span> Remember me on next login </label>
         </div>
-        <input type="submit" value='Sign In' onSubmit={onSubmitClick}/>
-      </form>
+        <Button title='Sign In' onClick={onSubmitClick}/>
+      </div>
     </div>
   )
 }

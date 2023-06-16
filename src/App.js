@@ -17,6 +17,7 @@ function App() {
   const [modalIsActive, setModalIsActive] = useState(false);
   const [isAutorized, setIsAutorized] = useState(false);
 
+
   useEffect(() => {
     axios
       .get('https://jsonplaceholder.typicode.com/photos')
@@ -38,12 +39,16 @@ function App() {
     setModalIsActive(true);
   }
 
-  console.log(usersDb);
-
   return (
     <div className="App">
       <header>
-        <Button title='Sign In' onClick={onClickSignIn}/>
+        {isAutorized ? 
+          <div>
+            <h1>Welcome!</h1>
+            <Button title='Sign Out' onClick={() => setIsAutorized(false)}/>
+          </div> : 
+          <Button title='Sign In' onClick={onClickSignIn}/>
+        }
       </header>
       <main>
         <div className="wrapper">

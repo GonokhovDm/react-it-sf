@@ -5,6 +5,8 @@ import Button from "./Components/Button/Button";
 import CardItem from "./Components/CardItem/CardItem";
 import Modal from "./Components/Modal/Modal";
 
+import usersDb from "./source/usersDb.json";
+
 import './media.scss';
 
 function App() {
@@ -13,6 +15,7 @@ function App() {
   const [responseInfo, setResponseInfo] = useState('');
   const [cardsCounter, setCardsCounter] = useState(3);
   const [modalIsActive, setModalIsActive] = useState(false);
+  const [isAutorized, setIsAutorized] = useState(false);
 
   useEffect(() => {
     axios
@@ -35,6 +38,8 @@ function App() {
     setModalIsActive(true);
   }
 
+  console.log(usersDb);
+
   return (
     <div className="App">
       <header>
@@ -43,7 +48,11 @@ function App() {
       <main>
         <div className="wrapper">
           {responsePhoto ? (
-            <CardItem responsePhoto={responsePhoto} responseInfo={responseInfo} cardsCounter={cardsCounter} />
+            <CardItem 
+              responsePhoto={responsePhoto} 
+              responseInfo={responseInfo} 
+              cardsCounter={cardsCounter} 
+            />
             ) : (
               'Loading'
             )
@@ -53,7 +62,12 @@ function App() {
       </main>
 
       <section className={`modal-wrapper ${modalIsActive ? 'active' : ''}`}>
-        <Modal modalIsActive={modalIsActive} setModalIsActive={setModalIsActive}/>
+        <Modal 
+          modalIsActive={modalIsActive} 
+          setModalIsActive={setModalIsActive} 
+          isAutorized={isAutorized} 
+          setIsAutorized={setIsAutorized}
+        />
       </section>
     </div>
   );

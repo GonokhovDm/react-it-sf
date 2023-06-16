@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "login": "testlogin",
+    "password": "testpassword"
+  },
+  {
+    "id": 2,
+    "login": "myloginisawesome",
+    "password": "mypasswordissafe"
+  },
+  {
+    "id": 3,
+    "login": "logi1111",
+    "password": "logi2222"
+  }
+]

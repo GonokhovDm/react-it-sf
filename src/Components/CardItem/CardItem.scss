@@ -38,8 +38,10 @@ $index: calc(1vw + 1vh);
 
   .layout {
     background-color: rgba($color: #2B2F3C, $alpha: 0.65);
-    height: 100%;
     padding: $index;
+    max-width: calc(100% - ($index*2));
+    width: 100%;
+    height: 100%;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -51,6 +53,10 @@ $index: calc(1vw + 1vh);
     z-index: 2;
     color: #fff;
     transition: all .2s ease;
+
+    &__wrapper {
+      width: 100%;
+    }
 
     &__top {
       max-width: 100%;

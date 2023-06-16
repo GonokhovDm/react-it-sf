@@ -3,6 +3,7 @@ import React from 'react'
 import Button from '../Button/Button';
 
 import './CardItem.scss'
+import './CardItemMedia.scss'
 
 import StarSvg from '../../source/Star.svg'
 

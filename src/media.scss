@@ -12,15 +12,6 @@ $index: calc(1vw + 1vh);
   .wrapper {
     margin-top: 25px;
   }
-
-  .card-item {
-    width: 45%;
-    height: calc($index * 15);
-
-    .layout {
-      transform: translateY(calc(100% - ($index*2.9)));
-    }
-  }
 }
 
 @media (max-width: 575px) {
@@ -30,14 +21,6 @@ $index: calc(1vw + 1vh);
 
   body {
     padding: 20px 30px;
-  }
-
-  .card-item {
-    width: 90%;
-
-    .layout {
-      transform: translateY(calc(100% - ($index*3.2)));
-    }
   }
 }
 

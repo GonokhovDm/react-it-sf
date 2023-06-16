@@ -1,6 +1,7 @@
 import React from 'react'
 
 import './Button.scss'
+import './ButtonMedia.scss'
 
 function Button( {title, onClick} ) {
  

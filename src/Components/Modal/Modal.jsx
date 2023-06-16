@@ -1,6 +1,7 @@
 import React from 'react'
 
 import './Modal.scss'
+import './ModalMedia.scss'
 
 import closeSvg from '../../source/close.svg'
 

@@ -1,0 +1,9 @@
+$index: calc(1vw + 1vh);
+
+@media (max-width: 575px) {
+  button {
+    padding: calc($index*.6) calc($index*4);
+    font-size: calc($index*1.2);
+  }
+  
+}

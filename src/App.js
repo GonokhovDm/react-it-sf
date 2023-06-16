@@ -3,6 +3,7 @@ import axios from "axios";
 
 import Button from "./Components/Button/Button";
 import CardItem from "./Components/CardItem/CardItem";
+import Modal from "./Components/Modal/Modal";
 
 import './media.scss';
 
@@ -11,6 +12,7 @@ function App() {
   const [responsePhoto, setResponsePhoto] = useState('');
   const [responseInfo, setResponseInfo] = useState('');
   const [cardsCounter, setCardsCounter] = useState(3);
+  const [modalIsActive, setModalIsActive] = useState(false);
 
   useEffect(() => {
     axios
@@ -29,10 +31,14 @@ function App() {
     setCardsCounter(cardsCounter+3);
   }
 
+  const onClickSignIn = () => {
+    setModalIsActive(true);
+  }
+
   return (
     <div className="App">
       <header>
-        <Button title='Sign In'/>
+        <Button title='Sign In' onClick={onClickSignIn}/>
       </header>
       <main>
         <div className="wrapper">
@@ -45,6 +51,10 @@ function App() {
           <Button title='More' setCardsCounter={setCardsCounter} onClick={onClickMoreCards}/>
         </div>    
       </main>
+
+      <section className={`modal-wrapper ${modalIsActive ? 'active' : ''}`}>
+        <Modal setModalIsActive={setModalIsActive}/>
+      </section>
     </div>
   );
 }

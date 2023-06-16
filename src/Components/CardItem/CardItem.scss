@@ -22,6 +22,9 @@ $index: calc(1vw + 1vh);
   &:hover {
     .layout {
       transform: translateY(0);
+      &__top {
+        margin-top: calc($index*2);
+      }
     }
   }
 
@@ -34,7 +37,8 @@ $index: calc(1vw + 1vh);
 
   .layout {
     background-color: rgba($color: #2B2F3C, $alpha: 0.65);
-    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
     height: 100%;
     padding: $index;
     position: absolute;
@@ -42,7 +46,7 @@ $index: calc(1vw + 1vh);
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    top: 0;
+    bottom: 0;
     left: 0;
     transform: translateY(calc(100% - ($index*2.7)));
     z-index: 2;
@@ -50,7 +54,6 @@ $index: calc(1vw + 1vh);
     transition: all .2s ease;
 
     &__top {
-      max-width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;

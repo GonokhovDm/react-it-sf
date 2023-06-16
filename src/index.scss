@@ -18,10 +18,14 @@ header {
   display: flex;
   justify-content: flex-end;
 
-  div {
+  .auth {
     display: flex;
     justify-content: space-between;
     width: 100%;
+  }
+
+  .no-auth {
+    justify-content: flex-end;
   }
 
   h1 {

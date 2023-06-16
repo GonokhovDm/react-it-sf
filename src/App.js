@@ -43,11 +43,14 @@ function App() {
     <div className="App">
       <header>
         {isAutorized ? 
-          <div>
+          <div className="auth">
             <h1>Welcome!</h1>
             <Button title='Sign Out' onClick={() => setIsAutorized(false)}/>
           </div> : 
-          <Button title='Sign In' onClick={onClickSignIn}/>
+          <div className="no-auth">
+            <Button title='Sign In' onClick={onClickSignIn}/>
+            <Button title='Sign Up' styleClass='ml-20'/>
+          </div>
         }
       </header>
       <main>

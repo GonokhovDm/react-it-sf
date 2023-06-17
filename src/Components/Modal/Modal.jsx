@@ -54,7 +54,7 @@ function Modal({ modalIsActive, setModalIsActive, setIsAutorized }) {
           <input type="checkbox" className='modal__checkbox-custom' id='remember' onChange={() => setIsChecked(!isChecked)}/>
           <label htmlFor="remember"><span className='modal__checkbox-span'></span> Remember me on next login </label>
         </div>
-        <Button title='Sign In' onClick={onSubmitClick}/>
+        <Button title='Sign In' onClick={onSubmitClick} styleClass='mt-20'/>
       </div>
     </div>
   )

@@ -1,5 +1,13 @@
 $index: calc(1vw + 1vh);
 
+@media (max-width: 1200px) {
+  .card-item {
+    width: 30%;
+    margin-left: calc($index * .5);
+    margin-right: calc($index * .5);
+  }
+}
+
 @media (max-width: 992px) {
   .card-item {
     width: 45%;

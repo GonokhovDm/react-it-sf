@@ -4,6 +4,7 @@ import axios from "axios";
 import Button from "./Components/Button/Button";
 import CardItem from "./Components/CardItem/CardItem";
 import Modal from "./Components/Modal/Modal";
+import Preloader from "./Components/Preloader/Preloader";
 
 import usersDb from "./source/usersDb.json";
 
@@ -62,7 +63,11 @@ function App() {
               cardsCounter={cardsCounter} 
             />
             ) : (
-              'Loading'
+              <div>
+                <Preloader />
+                <Preloader />
+                <Preloader />
+              </div>
             )
           }
           <Button title='More' setCardsCounter={setCardsCounter} onClick={onClickMoreCards}/>

@@ -50,7 +50,6 @@ function App() {
           </div> : 
           <div className="no-auth">
             <Button title='Sign In' onClick={onClickSignIn}/>
-            <Button title='Sign Up' styleClass='ml-20'/>
           </div>
         }
       </header>
